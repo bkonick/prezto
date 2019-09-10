@@ -17,8 +17,11 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='atom -w'
+fi
 export PAGER='less'
 
 #
