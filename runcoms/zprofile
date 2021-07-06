@@ -20,7 +20,7 @@ fi
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='atom -w'
+  export EDITOR='code -w'
 fi
 export PAGER='less'
 
