@@ -38,7 +38,7 @@ eval "$(jenv init -)"
 export KITCHEN_YAML=kitchen.ec2.yml
 
 # Chef
-export CHEF_GENERATOR_PATH="/Users/bkonick/workspace/cargurus/cargurus-devops/chef_v2/cg_chef_skeletons/cookbooks/cg_code_generator"
+export CHEF_GENERATOR_PATH="$HOME/workspace/cargurus/cargurus-devops/chef_v2/cg_chef_skeletons/cookbooks/cg_code_generator"
 
 # GitHub Enterprise
 export GITHUB_TOKEN=$(op item get "GitHub" --fields label=token --format json | jq -r '.value')
