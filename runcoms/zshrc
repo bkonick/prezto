@@ -15,9 +15,12 @@ fi
 HISTSIZE=100000
 SAVEHIST=100000
 
+# OP CLI
+source $HOME/.config/op/plugins.sh
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
 # Homebrew
-export HOMEBREW_GITHUB_API_TOKEN=$(op item get "GitHub" --fields label="homebrew token" --format json | jq -r '.value')
-eval $(/opt/homebrew/bin/brew shellenv)
+eval $(brew shellenv)
 
 # Powerlevel9k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
@@ -39,15 +42,6 @@ export KITCHEN_YAML=kitchen.ec2.yml
 
 # Chef
 export CHEF_GENERATOR_PATH="$HOME/workspace/cargurus/cargurus-devops/chef_v2/cg_chef_skeletons/cookbooks/cg_code_generator"
-
-# GitHub Enterprise
-export GITHUB_TOKEN=$(op item get "GitHub" --fields label=token --format json | jq -r '.value')
-
-# Load SSH keys
-ssh-add -q ~/.ssh/id_rsa
-ssh-add -q ~/.ssh/cg_syseng_general
-ssh-add -q ~/.ssh/cg-coresys-shared
-
 export CHEF_LICENSE="accept"
 
 #export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
