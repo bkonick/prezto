@@ -77,3 +77,5 @@ export GOPATH=$(go env GOPATH)
 
 # docker
 export PATH=$PATH:$HOME/.docker/bin
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
