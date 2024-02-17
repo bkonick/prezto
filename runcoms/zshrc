@@ -35,7 +35,7 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 # rbenv
-#eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 # kitchen-ec2
 export KITCHEN_YAML=kitchen.ec2.yml
@@ -44,8 +44,7 @@ export KITCHEN_YAML=kitchen.ec2.yml
 export CHEF_GENERATOR_PATH="$HOME/workspace/cargurus/cargurus-devops/chef_v2/cg_chef_skeletons/cookbooks/cg_code_generator"
 export CHEF_LICENSE="accept"
 
-#export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
