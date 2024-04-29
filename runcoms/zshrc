@@ -27,6 +27,9 @@ POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_MODE='nerdfont-complete'
 
+# asdf
+. $(brew --prefix asdf)/libexec/asdf.sh
+
 # jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
