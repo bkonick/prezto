@@ -19,9 +19,6 @@ SAVEHIST=100000
 source $HOME/.config/op/plugins.sh
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
-# Homebrew
-eval $(brew shellenv)
-
 # Powerlevel9k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs status)
@@ -79,3 +76,6 @@ export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$HOME/.docker/bin
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
