@@ -44,15 +44,6 @@ export KITCHEN_YAML=kitchen.ec2.yml
 export CHEF_GENERATOR_PATH="$HOME/workspace/cargurus/cargurus-devops/chef_v2/cg_chef_skeletons/cookbooks/cg_code_generator"
 export CHEF_LICENSE="accept"
 
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 # vault
 export VAULT_ADDR="https://vault.na.c-gurus.com:8200"
 
@@ -82,3 +73,10 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
