@@ -11,3 +11,72 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+# history
+HISTSIZE=100000
+SAVEHIST=100000
+
+# OP CLI
+source $HOME/.config/op/plugins.sh
+export SSH_AUTH_SOCK=~/.1password/agent.sock
+
+# Powerlevel9k
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs status)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_MODE='nerdfont-complete'
+
+# asdf
+# . $(brew --prefix asdf)/libexec/asdf.sh
+
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# rbenv
+eval "$(rbenv init -)"
+
+# kitchen-ec2
+export KITCHEN_YAML=kitchen.ec2.yml
+
+# Chef
+export CHEF_GENERATOR_PATH="$HOME/workspace/cargurus/cargurus-devops/chef_v2/cg_chef_skeletons/cookbooks/cg_code_generator"
+export CHEF_LICENSE="accept"
+
+# vault
+export VAULT_ADDR="https://vault.na.c-gurus.com:8200"
+
+# aliases
+alias fixdns='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache'
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# tfenv
+export TFENV_AUTO_INSTALL=true
+export TFENV_CONFIG_DIR="$HOME/.tfenv"
+
+# openssl
+# export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+# go
+export PATH=$PATH:$(go env GOPATH)/bin
+export GOPATH=$(go env GOPATH)
+
+# docker
+export PATH=$PATH:$HOME/.docker/bin
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
