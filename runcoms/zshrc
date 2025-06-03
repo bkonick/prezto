@@ -29,6 +29,7 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 
 # asdf
 # . $(brew --prefix asdf)/libexec/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # jenv
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -36,9 +37,6 @@ eval "$(jenv init -)"
 
 # rbenv
 eval "$(rbenv init -)"
-
-# kitchen-ec2
-export KITCHEN_YAML=kitchen.ec2.yml
 
 # Chef
 export CHEF_GENERATOR_PATH="$HOME/workspace/cargurus/cargurus-devops/chef_v2/cg_chef_skeletons/cookbooks/cg_code_generator"
