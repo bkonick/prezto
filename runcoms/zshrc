@@ -17,7 +17,7 @@ SAVEHIST=100000
 
 # OP CLI
 source $HOME/.config/op/plugins.sh
-export SSH_AUTH_SOCK=~/.1password/agent.sock
+export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
 
 # Powerlevel9k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
